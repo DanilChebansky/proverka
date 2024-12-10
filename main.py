@@ -80,11 +80,11 @@ class GetHandler(BaseHTTPRequestHandler):
         return
 
 
-# if _name_ == '_main_':
 server_ip1 = 'localhost'
 server_port1 = 8000
 server_ip = '192.168.70.101'
 server_port = 43217
-server = HTTPServer((server_ip1, server_port1), GetHandler)
-# print(f'Starting server at http://{server_ip1}:{server_port1}')
-# server.serve_forever()
+if __name__ == '__main__':
+    server = HTTPServer((server_ip1, server_port1), GetHandler)
+    print(f'Starting server at http://{server_ip1}:{server_port1}')
+    server.serve_forever()
